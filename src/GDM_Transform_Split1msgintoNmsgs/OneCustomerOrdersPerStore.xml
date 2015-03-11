@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gdmNamespace:CustomerOrdersPerStore xmlns:gdmNamespace="http://gdm/schema/models" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://gdm/schema/models CustomerOrdersPerStore.xsd ">
+  <StoreCode>1</StoreCode>
+  <Operator>Op123</Operator>
+  <Date>2011-01-01</Date>
+  <Time>10:10:10</Time>
+  <Customer>John</Customer>
+ <NumItems>1</NumItems>
+  <Item>
+    <ItemCode>1</ItemCode>
+    <Price>0.20</Price>
+    <Quantity>5</Quantity>
+  </Item>
+   <ItemDescription>
+    <ItemCode>1</ItemCode>
+    <Description>Car</Description>
+  </ItemDescription> 
+  <Total>0.20</Total>
+</gdmNamespace:CustomerOrdersPerStore>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <input path="mbsharedlib://SharedLib_Split1msgintoNmsgs/CustomerOrdersPerStore.xsd"/>
+    <output path="mbsharedlib://SharedLib_Split1msgintoNmsgs/StockOrder.xsd"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="io" uri="http://gdm/schema/models"/>
+        <namespace kind="extension" prefix="fn" uri="http://www.w3.org/2005/xpath-functions"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="SplitMessageIntoMultipleMessages_Mapping">
+        <input namespace="http://gdm/schema/models" path="mb:msg(CustomerOrdersPerStore,assembly,XMLNSC,LocalEnvironment)"/>
+        <output namespace="http://gdm/schema/models" path="mb:msg(StockOrder,assembly,XMLNSC,LocalEnvironment)"/>
+        <foreach>
+            <input path="CustomerOrdersPerStore/Item" var="Item1"/>
+            <input auxiliary="true" path="LocalEnvironment" var="LocalEnvironment1"/>
+            <input auxiliary="true" path="CustomerOrdersPerStore/NumItems" var="NumItems1"/>
+            <input auxiliary="true" path="CustomerOrdersPerStore/StoreCode" var="StoreCode2"/>
+            <input auxiliary="true" path="CustomerOrdersPerStore/Date" var="Date"/>
+            <input auxiliary="true" path="CustomerOrdersPerStore/Time" var="Time"/>
+            <output path="."/>
+            <move>
+                <input path="$LocalEnvironment1/." var="LocalEnvironment1"/>
+                <output path="LocalEnvironment"/>
+                <override>
+                    <function ref="concat">
+                        <input path="$StoreCode2/." var="StoreCode2"/>
+                        <input path="$Item1/ItemCode" var="ItemCode2"/>
+                        <output path="LocalEnvironment/Destination/File/Name"/>
+                    </function>
+                </override>
+            </move>
+            <move>
+                <input path="$StoreCode2/." var="StoreCode2"/>
+                <output path="StockOrder/StoreCode"/>
+            </move>
+            <move>
+                <input path="$Item1/ItemCode"/>
+                <output path="StockOrder/ItemCode"/>
+            </move>
+            <move>
+                <input path="$Item1/Quantity"/>
+                <output path="StockOrder/Quantity"/>
+            </move>
+            <function ref="fn:concat">
+                <input path="$Date/." var="Date"/>
+                <input path="$Time/." var="Time1"/>
+                <output path="StockOrder/DateTime"/>
+                <param name="string1" value="$Date"/>
+                <param name="string2" value="'T'"/>
+                <param name="string3" value="$Time1"/>
+            </function>
+        </foreach>
+    </mappingDeclaration>
+</mappingRoot>
