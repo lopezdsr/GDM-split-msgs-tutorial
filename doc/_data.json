@@ -271,11 +271,11 @@
               "description":"Testing your message flow by using the Flow exerciser",
               "link":"com.ibm.etools.mft.doc/rt26110_.htm"
             },
-			{
+	   {
               "title":"Knowledge Center link to ",
               "description":"Developing integration solutions by using applications",
               "link":"com.ibm.etools.mft.doc/bi12002_.htm"
-            
+            } 
           ]
         }
       }
