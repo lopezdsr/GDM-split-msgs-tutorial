@@ -1,9 +1,7 @@
 # GDM-split-msgs-tutorial
 Split 1 message into multiple messages graphically by using the Graphical Data Mapping editor
 
-This tutorial demonstrates how to use a message map (also known as a graphical data map) to graphically:
-1. Process an XML message that contains one or more records, in the form of a list of child XML elements. 
-2. Split the input message into individual messages by creating a new message from each child element. 
+This tutorial demonstrates how to use a message map (also known as a graphical data map) to graphically process an XML message that contains one or more records, in the form of a list of child XML elements. It also demonstrates how to split the input message into individual messages by creating a new message from each child element. 
 
 This Graphical Data Mapping capability in IBM Integration Bus is implemented within an application. In this application, a message flow defines the steps required to implement the message transformation and the message split logic of the solution.
 
