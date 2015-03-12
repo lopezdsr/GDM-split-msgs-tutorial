@@ -45,7 +45,7 @@
         "_overviewComment":"A short description of what happens in this tutorial, and an optional short explanation of the IIB concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
         "sections":[
           {
-		    "section":"This tutorial demonstrates how to process an XML message that contains one or more records, in the form of a list of child XML elements. The input message is split into individual messages by creating a new message from each child element. "
+		    "section":"This tutorial demonstrates how to use a message map (also known as a graphical data map) to graphically process an XML message that contains one or more records, in the form of a list of child XML elements. It also demonstrates how to split the input message into individual messages by creating a new message from each child element."
 		  }
         ]
       }
