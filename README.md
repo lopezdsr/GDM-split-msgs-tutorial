@@ -5,7 +5,7 @@ This tutorial demonstrates how to use a message map (also known as a graphical d
 1. Process an XML message that contains one or more records, in the form of a list of child XML elements. 
 2. Split the input message into individual messages by creating a new message from each child element. 
 
-The Garphical Data Mapping capability in IBM Integration Bus is implemented within an application. In this application, a message flow defines the steps required to implement the message transformation and the message split logic of the solution.
+This Graphical Data Mapping capability in IBM Integration Bus is implemented within an application. In this application, a message flow defines the steps required to implement the message transformation and the message split logic of the solution.
 
 An application is a container for all the resources that are required to create the solution. An application can contain IBM Integration Bus resources, such as message flows, message models, libraries, and JAR files.
 
