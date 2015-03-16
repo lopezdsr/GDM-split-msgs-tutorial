@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ 
+	
+<!-- header::Start -->
+	<head>
+		<!-- Use Internet Explorer 9 Standards mode for Eclipse Browser Control - https://www.eclipse.org/swt/faq.php#browsernativeie and https://msdn.microsoft.com/en-us/library/jj676915%28v=vs.85%29.aspx -->
+  		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		
+		<!-- Next 2 http=equiv headers required to disable caching the Eclipse Browser Widget -->
+		<meta http-equiv="Pragma" content="no-cache">
+  		<meta http-equiv="Expires" content="-1">
+
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="copyright" content="Copyright IBM Corporation 2014" />
+		<meta name="abstract" content="IBM Integration Bus V10 Tutorial">
+		<meta name="author" content="IBM">
+		<meta name="description" content="IBM Integration Bus V10 Tutorial">
+		<meta name="keywords" content="keywords" > 
+		<meta name="robots" content="index,follow">
+		<meta name="source" content="IBM Integration Bus V10 Tutorial" /> 
+		
+		<title>IBM Integration Bus V10 Tutorial</title>
+
+    	<link rel="stylesheet" href="http://ot4i.github.io/ot4i.tutorials/dist/css/main.css" />
+		<link rel="stylesheet" href="http://ot4i.github.io/ot4i.tutorials/dist/css/app.css" />
+    	
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/json2.js"></script>
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/js2java.js"></script>
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/js2java_steps.js"></script>
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/modernizr.js"></script>
+	</head>
+<!-- header::End -->
+<!-- body::Start -->
+		<body>
+  	<!-- body content here -->
+	<div class="row">
+	  <div class="small-12 medium-12 large-12 columns">
+	    <p> </p>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="small-9 medium-9 large-9 columns">
+	    <h4>Split a message into multiple messages by using the Graphical Data Mapping editor</h4>
+	  </div>
+	  <div class="small-3 medium-3 large-3 columns">
+		<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right helplink">IBM Knowledge Center</a> 
+	  </div>
+	</div> 
+	<hr>
+	<div class="row">
+		<div class="small-10 medium-10 large-10 columns">
+		<h5> Learn how to use a message map and the Mapping node to graphically transform data and split a message into multiple messages by exploring this simple example. </h5>
+		</div>
+		<div class="small-2 medium-2 large-2 columns">
+			<div class="small radius button right" id="backToGallery" onclick="backToGallery()"> Back To Gallery
+			</div>
+		</div>
+	</div>
+	<div class="row">          
+		  <div class="small-12 medium-12 large-12 columns">
+			<ul class="tabs vertical"> 
+				<li class="tab-title tab-title-small active"> 
+				  <a href="javascript:;" onclick="show('panel11')">Overview</a>
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel21')">Create </a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel31')">Prepare</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel41')">Run</a> 
+				</li>
+			</ul>
+			<!-- editing -->
+			<div class="tabs-content panel-thin-blue vertical"> 
+			    <div class="content active" id="panel11">
+			    	<div class="small-12 medium-12 large-12 columns">
+				    	<div class="row content-details">
+					      	<h4>Overview</h4>
+					        
+						    
+								<p> This tutorial demonstrates how to create an integration solution that splits a message into multiple messages graphically. </p>
+							
+								<p> A Mapping node is used to model a graphical data transformation step in the solution. The mapping node has an associated message map, also known as a graphical data map. </p>
+							
+								<p> The message map is the resource you use to define and implement the data transformation and message split requirements. </p>
+							
+						</div>
+							
+						<div class="row content-details">
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
+							   	
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/br28800_.htm')" title="Knowledge Center link to Transforming messages by using the Graphical Data Mapping editor">Transforming messages by using the Graphical Data Mapping editor</a> </li>
+							   	
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/br28710_.htm')" title="Knowledge Center link to Mapping an input message to multiple output messages">Mapping an input message to multiple output messages</a> </li>
+							   	
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bc28600_.htm')" title="Knowledge Center link to Mapping Node">Mapping Node</a> </li>
+							   	
+							
+							</ul>
+						</div>	
+							
+					</div>
+				</div>
+		    	<div class="content" id="panel21">
+		    		
+		    		<div class="small-10 medium-10 large-10 columns divider">
+					
+				      	<div class="row content-details">
+					      	<h4>Import files</h4>
+					        
+						    
+								<p> Click Import to add the solution to your IBM Integration Toolkit workspace. </p>
+							
+								<p> A shared library project and an application project are added in the Application Development view of your IBM Integration Toolkit workspace. These two projects contain all the development and test resources that you need to implement and run this solution. </p>
+							
+						</div>
+						
+						<div class="row content-details">
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ab00040_.htm')" title="Knowledge Center link to Integration Development perspective">Integration Development perspective</a> </li>
+							   	
+							
+							</ul>
+						</div>
+						
+					</div>
+					
+					<div class="small-2 medium-2 large-2 columns">
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MainFlow')"> Import <img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+										
+				    </div>
+					
+		    	</div>
+		    	<div class="content" id="panel31">
+					
+					<div class="small-12 medium-12 large-12 columns">
+					
+						<div class="row content-details">
+						  	<h4>Prepare</h4>
+						    
+						    
+								<p> Click <b>Deploy</b> to deliver the solution from the development environment to the local test environment. </p>
+							
+								<p> Create the input directory c:\iib\in in your file system. This directory matches the directory that is monitored by the FileInput node. </p>
+							
+								<p> Create the output directory c:\iib\out in your file system. This directory matches the directory that is monitored by the FileOutput node. </p>
+							
+						</div>
+						
+						<div class="row content-details">
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bb10600_.htm')" title="Knowledge Center link to Integration Nodes view">Integration Nodes view</a> </li>
+							   	
+							
+							</ul>
+						</div>
+							
+					</div>
+					
+		    	</div>
+		    	<div class="content" id="panel41">
+		    		
+		    		<div class="small-10 medium-10 large-10 columns divider">
+					
+				    	<div class="row content-details">
+					      	<h4>Test the solution</h4>
+					        
+						    
+								<p> The GDM_Transform_Split1msgintoNmsgs application is shown in the Application Development view of your workspace. </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Open the SplitMessageIntoMultipleMessages.msgflow, and click the Flow Exerciser icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/startFlowExerciser.png" alt="flow exerciser icon"> to start recording the message path through the flow.
+										
+										</li>
+									
+										<li> Copy the XML message MultipleCustomerOrdersPerStore.xml into the c:\IIB\in directory. The message is available in the GDM_Transform_Split1msgintoNmsgs project, within the section <b>Other Resources</b>.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+								<p> After the request message is processed, the message path is automatically highlighted on the message flow. </p>
+								
+							
+						</div>
+						
+						<div class="row content-details"> 	
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/rt26110_.htm')" title="Knowledge Center link to Testing your message flow by using the Flow exerciser">Testing your message flow by using the Flow exerciser</a> </li>
+							   	
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
+							   	
+							
+							</ul>
+						</div>
+							
+					</div>
+					
+					<div class="small-2 medium-2 large-2 columns">
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="deployArtifacts()"> Deploy <img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+				    
+					
+					<hr>
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes in your workspace made by the tutorial."> Clean Up <img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/close-cancel-error_128-red.png"></a></h4>
+				    
+					
+				    </div>
+					
+				</div>	
+			</div> <!-- tab-content -->
+		</div> <!-- columns -->
+	  </div> <!-- row --></body>
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/jquery.js"></script>
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/foundation.min.js"></script>
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/main.js"></script>
+	</body>
+<!-- body::End -->
+
+</html>
