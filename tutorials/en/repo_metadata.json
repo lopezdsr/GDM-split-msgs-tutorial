@@ -29,7 +29,7 @@
            				{
        		        	        	"id" : "MainFlow",
        				                "editor" : "flow",
-    			  	                "wspath" : "<workspace>/GDM_Transform_SplitmsgintoNmsgs/SplitMessageIntoMultipleMessages.msgflow"
+    			  	                "wspath" : "<workspace>/GDM_Transform_Split1msgintoNmsgs/SplitMessageIntoMultipleMessages.msgflow"
        			                }
         		          ],
 		"deployedResources": [
