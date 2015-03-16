@@ -1,18 +1,27 @@
 {
-  "version":"0.4",
-  "pageContent":{
-    "comments":"Must use underscore for en-us.",
-    "navItems":{
-      "_common":{
-        "buttonBackToGallery":{
-          "text":"Back To Gallery"
-        },
-        "buttonStartTutorial":{
-          "text":"Start Tutorial"
+   "version": "0.5",
+    "pageContent": 
+	{
+        "_comments": "JSON object that contains data for page labels, buttons, etc.",
+        "navItems": 
+		{
+            "_common": 
+			{
+                "buttonBackToGallery": 
+				{
+                    "name": "Back To Gallery",
+					"method": "backToGallery()",
+					"idName": "backToGallery"	
+                },
+                "buttonStartTutorial": 
+				{
+                    "name": "Start Tutorial",
+					"method": "startTutorialFromDetailsScreen()",
+					"idName": "startTutorial"
+                }
+            }
         }
-      }
-    }
-  },
+    },
   "tutorial":{
     "_common":{
       "name":"Split a message into multiple messages by using the Graphical Data Mapping editor",
@@ -20,7 +29,12 @@
       "durationText":"This tutorial takes approximately",
       "durationTime":"10 minutes",
       "_resourceToOpenComment":"The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
-      "resourceToOpen":"MainFlow"
+      "resourceToOpen":"MainFlow",
+	  "helpLink": 
+			{
+                "text": "IBM Knowledge Center",
+                "link": "/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm"
+            }
     },
     "pageDetails":{
       "topicsName":"Tutorial Topics",
@@ -118,7 +132,17 @@
             }
           ]
         },
-        "actionName":"Import"
+            "actions": 
+				{
+                    "title": "Create Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Import",
+                            "method": "importArtifacts()"
+                        }
+                    ]
+                }
       },
 	  "prepare":{
         "overview":{
@@ -146,13 +170,11 @@
               "link":"com.ibm.etools.mft.doc/bb10600_.htm"
             }
           ]
-        },
-        "actionName":"Deploy"
+        }
+       
       },
 	    "run":{
-        "cleanupName":"Clean up",
-        "cleanupDescription":"Clean up and remove any changes made by the tutorial.",
-        "overview":{
+          "overview":{
           "name":"Run",
           "heading":"Test the solution",
           "_runComment":"The full steps for the user to run through the tutorial. Use 'sections' to render paragraphs, 'steps' with a type of 'ordered' or 'unordered' to render HTML lists, and 'substeps' to render nested lists.",
@@ -190,7 +212,28 @@
               "link":"com.ibm.etools.mft.doc/bi12002_.htm"
             }
           ]
-        }
+        },
+		"actions": 
+	    {
+                    "title": "Run Actions",
+                    "details": [
+                        {
+                            "name": "Deploy",
+                            "method": "deployArtifacts()"
+                        }
+                    ]
+        },
+	    "exits": 
+	    {
+		  "title": "Run Exits",
+		  "details": [
+		   {
+			"name": "Clean Up",
+				"description": "Clean up and remove any changes in your workspace made by the tutorial.",
+				"method": "cleanUp()"
+		   }
+		  ]
+	    }
       }
     }
   }
