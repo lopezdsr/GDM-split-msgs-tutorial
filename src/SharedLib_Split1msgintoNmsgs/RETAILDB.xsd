@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://retaildb/mqsi" xmlns:retaildbmqsi="http://retaildb/mqsi" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- Message definition generated from C:\devel\WMBv8_Workspace\GraphicalDataMappingRetailSampleDatabase\RETAILDB.dbm -->
+
+<!-- Complex type for RETAILDB.MQSI.DEPOTS -->
+    <xsd:complexType name="DEPOTSType">
+    <xsd:sequence>
+      <xsd:element name="DEPOTID" type="xsd:int"/>
+      <xsd:element name="DEPOTNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+<!-- Global element for RETAILDB.MQSI.DEPOTS -->
+    <xsd:element xmlns:ibmDfdlExtn="http://www.ibm.com/dfdl/extensions" ibmDfdlExtn:docRoot="true" name="DEPOTS" type="retaildbmqsi:DEPOTSType"/>
+
+<!-- Complex type for RETAILDB.MQSI.STOREDEPOTS -->
+    <xsd:complexType name="STOREDEPOTSType">
+    <xsd:sequence>
+      <xsd:element name="STOREID" type="xsd:int"/>
+      <xsd:element name="DEPOTID" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+<!-- Global element for RETAILDB.MQSI.STOREDEPOTS -->
+    <xsd:element xmlns:ibmDfdlExtn="http://www.ibm.com/dfdl/extensions" ibmDfdlExtn:docRoot="true" name="STOREDEPOTS" type="retaildbmqsi:STOREDEPOTSType"/>
+
+<!-- Complex type for RETAILDB.MQSI.STORES -->
+    <xsd:complexType name="STORESType">
+    <xsd:sequence>
+      <xsd:element name="STOREID" type="xsd:int"/>
+      <xsd:element name="STORENAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+<!-- Global element for RETAILDB.MQSI.STORES -->
+    <xsd:element xmlns:ibmDfdlExtn="http://www.ibm.com/dfdl/extensions" ibmDfdlExtn:docRoot="true" name="STORES" type="retaildbmqsi:STORESType"/>
+</xsd:schema>

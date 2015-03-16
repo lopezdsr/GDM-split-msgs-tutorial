@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://gdm/schema/models" xmlns:gdmNamespace="http://gdm/schema/models" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="StockOrder">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element default="2011-01-01T10:10:10" name="DateTime" type="xsd:dateTime"/>
+				<xsd:element default="123" name="StoreCode" type="xsd:int"/>
+				<xsd:element default="123" name="ItemCode" type="xsd:int"/>
+				<xsd:element default="5" name="Quantity" type="xsd:positiveInteger"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="StockOrderBatch">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" ref="gdmNamespace:StockOrder"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

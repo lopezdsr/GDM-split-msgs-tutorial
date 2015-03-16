@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:csv="http://www.ibm.com/dfdl/CommaSeparatedFormat" xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/" xmlns:ibmDfdlExtn="http://www.ibm.com/dfdl/extensions">
+
+
+    	<xsd:import namespace="http://www.ibm.com/dfdl/CommaSeparatedFormat" schemaLocation="CommaSeparatedFormat.xsd"/>
+
+	<xsd:annotation>
+		<xsd:appinfo source="http://www.ogf.org/dfdl/">
+			<dfdl:format encoding="{$dfdl:encoding}" ref="csv:CommaSeparatedFormat"/>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+
+	<xsd:element ibmDfdlExtn:docRoot="true" name="Stock_Order">
+		<xsd:complexType>
+			<xsd:sequence dfdl:separator="%CR;%LF;">
+
+				<xsd:element dfdl:occursCountKind="implicit" maxOccurs="unbounded" name="StockOrder">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element dfdl:calendarPattern="dd-MM-yyyy hh:mm:ss" dfdl:calendarPatternKind="explicit" name="DateTime" nillable="false" type="xsd:dateTime">
+
+							</xsd:element>
+							<xsd:element dfdl:textNumberPattern="#0" name="StoreCode" type="xsd:int">
+							</xsd:element>
+							<xsd:element dfdl:textNumberPattern="#0" name="ItemCode" type="xsd:int">
+							</xsd:element>
+							<xsd:element dfdl:textNumberPattern="#0" name="Quantity" type="xsd:int">
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+</xsd:schema>
