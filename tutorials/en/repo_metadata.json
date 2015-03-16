@@ -19,7 +19,7 @@
            	"detailsURL"    : "http://lopezdsr.github.io/GDM-split-msgs-tutorial/GDMsplitmsgstutorial/en/details.html",
            	"stepsURL"      : "http://lopezdsr.github.io/GDM-split-msgs-tutorial/GDMsplitmsgstutorial/en/steps.html",
            	"zipURL"        : "https://github.com/lopezdsr/GDM-split-msgs-tutorial/releases/download/v1.0.0/SplitMsgIntoMultipleMsgsInGDMv1.zip",
-           	"barFile"       : "<workspace>/GDM_Transform_Split1msgintoNmsgs/GDM_Transform_Split1msgintoNmsgsproject.generated.bar",
+           	"barFile"       : "<workspace>/GDM_Transform_Split1msgintoNmsgs/BarFiles/GDM_split1msgintoNmsgs.bar",
            	"visible"	: "true",
            	"tags"		: "gdm;tutorial;iib",
            	"isPattern"	: "false",
